@@ -1,0 +1,994 @@
+/* state screen */
+div.start_game{
+    width: 1000px;
+    height: 596px;
+    border: 3px solid#000000;
+    position: absolute; 
+    left: 20px;
+    top: 20px;
+}
+#title_screen{
+    width: 1000px;
+    height: 596px;
+}
+/* start button */
+#startbtn {
+    display: inline;
+    padding: 12px 24px;
+    font-family: impact;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 435px;
+    bottom: 10px;
+}
+
+.startbtn:hover{
+    background-color: #3e8e41;
+}
+.startbtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+/* ///////////////////////////////////////////// */
+/* select character */
+div.select_character{
+    width: 1000px;
+    height: 596px;
+    border: 3px solid#000000;
+    position: absolute; 
+    left: 20px;
+    top: 20px;
+}
+#background{
+    width: 1000px;
+    height: 596px;
+}
+/* displays the male char */
+#male_Character{
+    width: 150px;
+    height: 380px;
+    position: absolute;
+    left: 200px;
+    bottom: 68px;
+    transform: scaleX(-1);
+}
+ /* displays the female char */
+#female_Character{
+    width: 165px;
+    height: 355px;
+    position: absolute;
+    left: 620px;
+    bottom: 65px;
+    
+}
+/* button for male char */
+#malebtn{
+    display: inline;
+    padding: 5px 14px;
+    font-family: impact;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 205px;
+    bottom: 5px;
+}
+.malebtn:hover{
+    background-color: #3e8e41;
+}
+.malebtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+/* button for female char */
+#femalebtn{
+    display: inline;
+    padding: 5px 14px;
+    font-family: impact;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    right: 238px;
+    bottom: 5px;
+}
+.femalebtn:hover{
+    background-color: #3e8e41;
+}
+.femalebtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+/* display the banner */
+#select_Character_Banner{
+    width: 800px;
+    height: 90px;
+    position: absolute;
+    top: 10px;
+    left: 100px; 
+}
+/* ///////////////////////////////////////////// */
+div.select_pokemon{
+    width: 1000px;
+    height: 596px;
+    border: 3px solid#000000;
+    position: absolute; 
+    left: 20px;
+    top: 20px;
+}
+#pokemon_background{
+    width: 1000px;
+    height: 596px;  
+}
+#pokemon1{
+    height: 200px;
+    width: 200px;
+    transform: scaleX(-1);
+    position: absolute;
+    top: 320px;
+    left: 20px;
+}
+#pokemon2{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 320px;
+    left: 265px;
+}
+#pokemon3{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    transform: scaleX(-1);
+    top: 320px;
+    left: 510px;
+
+}
+#pokemon4{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 320px;
+    left: 765px;
+}
+
+#charmanderBtn{
+    display: inline;
+    padding: 5px 14px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 40px;
+    bottom: 15px;
+}
+.charmanderBtn:hover{
+    background-color: #3e8e41;
+}
+.charmanderBtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+#pikachuBtn{
+    display: inline;
+    padding: 5px 14px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 295px;
+    bottom: 15px;
+}
+.pikachuBtn:hover{
+    background-color: #3e8e41;
+}
+.pikuchuBtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+#squirtleBtn{
+    display: inline;
+    padding: 5px 14px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 565px;
+    bottom: 15px;
+}
+.squirtleBtn:hover{
+    background-color: #3e8e41;
+}
+.squirtleBtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+#eeveeBtn{
+    display: inline;
+    padding: 5px 14px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 790px;
+    bottom: 15px;
+}
+.eeveeBtn:hover{
+    background-color: #3e8e41;
+}
+.eeveeBtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+#select_pokm_banner{
+    width: 800px;
+    height: 90px;
+    position: absolute;
+    top: 10px;
+    left: 100px; 
+}
+/* ///////////////////////////////////////////// */
+/* Main menu 
+/* Displays the main-menu background */
+div.main_menu{
+    background-image: url("./Images/main_menu.jpg");
+    width: 1000px;
+    height: 596px;
+    border: 3px solid #000000;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+/* Displays the player*/
+#player{
+    width: 150px;
+    height: 380px;
+    position: absolute;
+    left: 350px;
+    bottom: 15px;
+    transform: scaleX(-1);
+}
+
+#player2{
+    width: 165px;
+    height: 355px;
+    position: absolute;
+    left: 350px;
+    bottom: 15px;
+    transform: scaleX(-1);
+}
+
+/* Music Button */
+#music_toggle{
+    display: inline;
+    padding: 12px 20px;
+    font-family: impact;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+/* Displays the Wild Battle button */
+#wild_battle{
+    display: inline;
+    padding: 12px 20px;
+    font-family: impact;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    right: 50px;
+    top: 100px;
+}
+.wild_battle:hover{
+    background-color: #3e8e41;
+}
+.wild_battle:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+/* Display Random Battle Button */
+#rand_battle{
+    display: inline;
+    padding: 12px 20px;
+    font-family: impact;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    right: 40px;
+    top: 200px;
+}
+.rand_battle:hover{
+    background-color: #3e8e41;
+}
+.rand_battle:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+/* Displays the Progression Battle */
+#prog_battle{
+    display: inline;
+    padding: 12px 20px;
+    font-family: impact;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    right: 62px;
+    top: 300px;
+}
+.prog_battle:hover{
+    background-color: #3e8e41;
+}
+.prog_battle:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+/* Display the User Stats Button */
+#stats {
+    display: inline;
+    padding: 12px 20px;
+    font-family: impact;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    right: 110px;
+    top: 400px;
+}
+.stats:hover{
+    background-color: #3e8e41;
+}
+.stats:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+/* Display the Help Button */
+#help{
+    display: inline;
+    padding: 12px 20px;
+    font-family: impact;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+.help:hover{
+    background-color: #3e8e41;
+}
+.help:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+/* Displays the Help Menu */
+div.help_menu{
+    width: 1000px;
+    height: 596px;
+    border: 3px solid#000000;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+#help_menu_banner{
+    width: 800px;
+    height: 90px;
+    position: absolute;
+    top: 10px;
+    left: 100px;
+}
+
+/* Back to Menu Button */
+#back_to_menu{
+    display: inline;
+    padding: 8px 16px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 10px;
+    top: 538px;
+}
+.back_to_menu:hover{
+    background-color: #3e8e41;
+}
+.back_to_menu:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+/* Pokemon Stats Help Menu Button */
+#pokmStats{
+    display: inline;
+    padding: 10px 18px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 410px;
+    top: 250px;
+}
+.pokmStats:hover{
+    background-color: #3e8e41;
+}
+.pokmStats:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+/* Pokemon Type Help Menu Button */
+#pokmType{
+    display: inline;
+    padding: 10px 18px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 410px;
+    top: 350px;
+}
+.pokmtype:hover{
+    background-color: #3e8e41;
+}
+.pokmType:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+/* Pokemon Battle Help Menu Button */
+#pokemonBattle{
+    display: inline;
+    padding: 10px 18px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 405px;
+    top: 150px;
+}
+.pokemonBattle:hover{
+    background-color: #3e8e41;
+}
+.pokemonBattle:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+/* Pokemon Battle Help Menu */
+div.PokemonBattle_help{
+    width: 1000px;
+    height: 596px;
+    border: 3px solid#000000;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+#PokemonBattle_help_background{
+    width: 1000px;
+    height: 596px;
+}
+#textBox{
+    width: 900px;
+    height: 500px;
+    padding: 15px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255, .8);
+    background-clip: content-box;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+}
+#WildBattleTxt{
+    width: 550px;
+    height: 100px;
+    position: absolute;
+    left: 300px;
+    top: 20px;
+    font-family: impact;
+}
+h2{
+    font-size: xx-large;
+    position: absolute;
+    left: 80px;
+}
+p{
+    text-align: center;
+    position: absolute;
+    right: 120px;
+    top: 50px;
+}
+#randomPlayerBattleTxt{
+    width: 550px;
+    height: 100px;
+    position: absolute;
+    left: 290px;
+    top: 120px;
+    font-family: impact;
+}
+#ProgressionBattleTxt{
+    width: 550px;
+    height: 100px;
+    position: absolute;
+    left: 300px;
+    top: 220px;
+    font-family: impact;
+}
+#HUD{
+    width: 550px;
+    height: 100px;
+    position: absolute;
+    left: 385px;
+    top: 320px;
+    font-family: impact;
+}
+#HUD_info{
+    width: 500px;
+    height: 125px;
+    border-radius: 20px;
+    position: absolute;
+    top: 65px;
+    right: 175px;
+}
+
+/* Back Button */
+#back{
+    display: inline;
+    padding: 8px 16px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 10px;
+    top: 538px;
+}
+.back:hover{
+    background-color: #3e8e41;
+}
+.back:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+/* Pokemon Stats Menu */
+div.PokemonStats_help{
+    width: 1000px;
+    height: 596px;
+    border: 3px solid#000000;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+#PokemonStats_help_background{
+    width: 1000px;
+    height: 596px;
+}
+h2{
+    font-size: xx-large;
+    position: absolute;
+    left: 80px;
+    font-family: impact;
+
+}
+#health_info{
+    width: 550px;
+    height: 100px;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+
+}
+#level{
+    width: 750px;
+    height: 100px;
+    position: absolute;
+    left: 30px;
+    top: 85px;
+}
+#attack{
+    width: 750px;
+    height: 100px;
+    position: absolute;
+    left: 30px;
+    top: 160px;
+}
+#defense{
+    width: 750px;
+    height: 100px;
+    position: absolute;
+    left: 30px;
+    top: 280px;
+}
+
+/* Back Button */
+#back_to_help{
+    display: inline;
+    padding: 8px 16px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 10px;
+    top: 538px;
+}
+.back_to_help:hover{
+    background-color: #3e8e41;
+}
+.back_to_help:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #000;
+    transform: translateY(4px);
+}
+
+/* Pokemon Type Help Menu */
+div.PokemonType_help{
+    width: 1000px;
+    height: 596px;
+    border: 3px solid#000000;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+#PokemonType_Type_background{
+    width: 1000px;
+    height: 596px;
+}
+
+#TypeChart{
+    width: 450px;
+    height: 380px;
+    border-radius: 10px;
+    position: absolute;
+    top: 115px;
+    left: 250px;
+}
+#type_chart{
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: 0px;
+    left: 325px;
+}
+#description{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 285px;
+    top: 2px;
+    font-family: impact;
+    text-align: center;
+
+}
+/* User Stats*/
+div.UserStats{
+    width: 1000px;
+    height: 596px;
+    border: 3px solid#000000;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+#UserStats_bg{
+    width: 1000px;
+    height: 596px;
+}
+#userImage{
+    width: 200px;
+    height: 500px;
+    padding: 15px;
+    border-radius: 50px;
+    position: absolute;
+    left: 10px;
+    top: 50px;
+}
+#statistics{
+    width: 600px;
+    height: 500px;
+    padding: 15px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255, .8);
+    background-clip: content-box;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+}
+#statNUMS{
+    width: 140px;
+    height: 500px;
+    padding: 15px;
+    border-radius: 50px;
+    background-clip: content-box;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+#play1{
+    width: 250px;
+    height: 480px;
+    left: 30px;
+    position: absolute;
+    
+}
+#play2{
+    width: 250px;
+    height: 480px;
+    left: 50px;
+    position: absolute;
+    
+}
+h1{
+    padding-left: 20px;
+    width: 550px;
+    height: 50px;
+    left: 300px;
+    top: 220px;
+    font-family: impact;
+}
+#returnToMain{
+    display: inline;
+    padding: 8px 16px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    left: 10px;
+    top: 538px;
+}
+div.introScene{
+    width: 1000px;
+    height: 596px;
+    border: 3px solid#000000;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+#lab-outside{
+    width: 1000px;
+    height: 596px;
+}
+#lab-bg{
+    width: 1000px;
+    height: 596px;
+}
+#introN{
+    display: inline;
+    padding: 8px 16px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    position: absolute;
+    right: 10px;
+    top: 25px;  
+}
+#introS{
+    display: inline;
+    padding: 8px 16px;
+    font-family: impact;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: bottom;
+    outline: none;
+    opacity:1;
+    background-color: rgb(255, 255, 255, .9);
+    border-radius: 15px;
+    box-shadow: 0 2px #000;
+    position: absolute;
+    right: 10px;
+    top: 538px;
+}
+#prof{
+    width: 300px;
+    height: 500px;
+    left: 200px;
+    bottom: 20px;
+    position: absolute;
+}
+#dialogg{
+    width: 890px;
+    height: 100px;
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255, .8);
+    background-clip: content-box;
+    position: absolute;
+    right: 80px;
+    bottom: 50px;
+}
+h3{
+    font-size: xx-large;
+    position: absolute;
+    left: 30px;
+    font-family: impact;
+}
+div.endScene{
+    width: 1000px;
+    height: 596px;
+    border: 3px solid#000000;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+#profEnd{
+    width: 300px;
+    height: 500px;
+    left: 600px;
+    bottom: 80px;
+    position: absolute;
+}
+#p1{
+    width: 250px;
+    height: 480px;
+    left: 120px;
+    top:60px;
+    position: absolute;
+}
+#p2{
+    width: 250px;
+    height: 480px;
+    left: 140px;
+    top:70px;
+    position: absolute;
+}
+#credits img{
+    height: auto;
+    width: 600px;
+    top: -100px;
+    left:200px;
+    position: absolute;
+}
+.movie{
+    animation: rollDown 5s ease-in-out;
+}
+@keyframes rollDown{
+    from{top:-100px;}
+    to{top: 500px;}
+}

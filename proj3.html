@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pokemon Black & Gold</title>
+    
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="fight.js"></script>
+    <script src="menu.js"></script>
+  
+    <link rel="stylesheet" href="fight.css">
+    <link rel="stylesheet" href="menu.css">
+  </head>
+  <body>
+    <!-- Pokemon Battle -->
+    <div id="fightScene" style="visibility: hidden;">
+      <canvas id="battlePkms" height="596px" width="1000px">
+        Canvas is not supported by this browser</canvas>
+      <audio autoplay loop muted="true" id="wildBattleAudio">
+        <source src="./Music/Wild_Battle_Music.mp3" type="audio/mpeg">
+      </audio>
+      <button id="mutebtn" onclick="stopMusic();">Toggle Music</button>
+      <img id="wildPokemonBattle" src="./Images/wild_pokemon_battle.png">
+      <img id="progressionBanner" src="./Images/progression_banner.png">
+      <img id="trainerBanner" src="./Images/trainer_banner.png">
+      <img id="userPkmnImg">
+      <img id="enemyPkmnImg">
+      <div class="user healthHUD">
+        <p class="PkmnName" id="userPkmnName"></p>
+        <p class="PkmnLevel" id="userLevel"></p>
+        <div class="healthBarCont">
+          <p class="healthBar" id="userHealthBar"></p>
+        </div>
+        <p class="currPkmnHealth" id="userCurrHealth"></p>
+        <p class="maxPkmnHealth" id="userMaxHealth"></p>
+    </div>
+    <div class="enemy healthHUD">
+      <p class="PkmnName" id="enemyPkmnName"></p>
+      <p class="PkmnLevel" id="enemyLevel"></p>
+      <div class="healthBarCont">
+        <p class="healthBar" id="enemyHealthBar"></p>
+      </div>
+      <p class="currPkmnHealth" id="enemyCurrHealth"></p>
+      <p class="maxPkmnHealth" id="enemyMaxHealth"></p>
+    </div>
+      <button id="fightbtn" onclick="displayMoves()">Fight</button>
+      <button id="swapPkmn" onclick="userSwapPokemon()">Swap Pokemon</button>
+      <button id="return" onclick="hideMoves()">Return</button>
+      <button id="light" onclick="lightChoice()">Light Attack</button>
+      <button id="medium" onclick="mediumChoice()">Medium Attack</button>
+      <button id="heavy" onclick="heavyChoice()">Special Attack</button>
+  </div>
+
+    <!-- Main Menu -->
+    <div class="main_menu" style="visibility: hidden;">
+      <audio autoplay loop muted="true" id="mainMenuAudio">
+        <source src="./Music/New_Bark_Town.mp3" type="audio/mpeg">
+      </audio>
+      <img id="player" src="./Images/Player.png">
+      <img id="player2" src="./Images/player2.png">
+      <button id="music_toggle" onclick="toggleMusic();">Toggle Music</button>
+      <button id="wild_battle" onclick="wildBattle();">Wild Pokemon Battle</button>
+      <button id="prog_battle" onclick="progressionBattle();">Progression Battle</button>
+      <button id="rand_battle" onclick="trainerBattle();">Random Trainer Battle</button>
+      <button id="help" onclick="help_button();">Help</button>
+      <button id="stats" onclick="userStats(); perStats()">Users Stats</button>
+    </div>
+
+    <!-- Loading Page -->
+    <div class="loading" style="visibility: hidden;">
+      <img id="loadingScr" src="./Images/loading_src.gif">
+    </div>
+
+    <!-- Select Player -->
+    <div class="select_character" style="visibility: hidden;">
+      <img id="background" src="./Images/intro_background.jpg">
+      <img id="male_Character" src="./Images/Player.png">
+      <img id="female_Character" src="./Images/player2.png">
+      <img id="select_Character_Banner" src="./Images/select_character.png">
+      <button id="malebtn" onclick="male_character();">Male</button>
+      <button id="femalebtn" onclick="female_character();">Female</button>
+    </div>
+
+    <!-- Start Game -->
+    <div class="start_game">
+      <img id="title_screen" src="./Images/Game_Logo.png">
+   
+      <button id="startbtn" onclick="start_game();">Start</button>
+
+    </div>
+
+    <!-- Select Pokemon -->
+    <div class="select_pokemon" style="visibility: hidden;">
+      <img id="pokemon_background" src="./Images/intro_background.jpg">
+      <img id="pokemon1" src="./Images/004Charmander.png">  
+      <img id="pokemon2" src="./Images/025Pikachu.png">
+      <img id="pokemon3" src="./Images/007Squirtle.png">
+      <img id="pokemon4" src="./Images/133Eevee.png">
+      <img id="select_pokm_banner" src="./Images/choose_starter.png">
+      <button id="charmanderBtn" onclick="select_pokm(4)">Charmander</button>
+      <button id="pikachuBtn" onclick="select_pokm(25)">Pikachu</button>
+      <button id="squirtleBtn" onclick="select_pokm(7)">Squirtle</button>
+      <button id="eeveeBtn" onclick="select_pokm(133)">Eevee</button>
+    </div>
+
+    <!-- Help Menu -->
+    <div class="help_menu" style="visibility: hidden;">
+      <img id="background" src="./Images/help_background.png">
+      <img id="help_menu_banner" src="./Images/help_menu.png">
+      <button id="pokemonBattle" onclick="help_wild_Battle()">Pokemon Battle</button>
+      <button id="pokmStats" onclick="help_pokemonStats();">Pokemon Stats</button>
+      <button id="pokmType" onclick="help_pokemonType();">Pokemon Type</button>
+      <button id="back_to_menu" onclick="back_menu();">Back</button>
+    </div>
+
+    <!-- Pokemon Battle Help -->
+    <div class="PokemonBattle_help" style="visibility: hidden;">
+      <img id="PokemonBattle_help_background" src="Images/help_background.png">
+      <button id="back" onclick="back();">Back</button>
+      <div id ="textBox"></div>
+        <div id="WildBattleTxt">
+          <h2>Wild Pokemon Battle</h2>
+          <p>Allows you to encounter a wild random pokemon. If you already have a full team (6 pokemon), allows you to replace one.</p>
+        </div>
+        <div id="randomPlayerBattleTxt">
+        <h2>Random Trainer Battle</h2>
+        <p>Allows you to fight a trainer with 3 pokemon. On victory, all of your pokemon gain 1 level.</p>
+      </div>
+      <div id="ProgressionBattleTxt">
+        <h2>Progression Battle</h2>
+        <p>Allows you to fight the Gym Leaders! On victory, all of your pokemon gain 3 levels.</p>
+      </div>
+      <div id="HUD">
+        <h2>HUD</h2>
+        <img id="HUD_info" src="./Images/HUD_info.png">
+      </div>
+    </div>
+
+    <!-- Pokemon Stats Help -->
+    <div class="PokemonStats_help" style="visibility: hidden;">
+      <img id="PokemonStats_help_background" src="Images/help_background.png">
+      <button id="back_to_help" onclick="back();">Back</button>
+      <div id ="textBox">
+        <div id="health_info">
+          <h2>HP: Health Points</h2>
+        </div>
+        <div id="level">
+          <h2>Level: The reletive strength of a pokemon.</h2>
+        </div>
+        <div id="attack">
+          <h2>Attack: Affects the damage a pokemon does when attacking</h2>
+        </div>
+        <div id="defense">
+          <h2>Defense - Affects the damage a pokemon takes when defending</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pokemon Type Help -->
+    <div class="PokemonType_help" style="visibility: hidden;">
+      <img id="PokemonType_Type_background" src="Images/help_background.png">
+      <button id="back_to_help" onclick="back();">Back</button>
+      <div id ="textBox">
+        <img id="TypeChart" src="./Images/type_chart.png">
+        <div id="type_chart">
+          <h2>Type Chart</h2>
+        </div>
+        <div id="description">
+          <p>The chart below describes how different Pokemon types match up against others to affect attack effectiveness</p>
+        </div>
+      </div>
+    </div>
+    <!-- Intro Scene-->
+    <div class="introScene" style="visibility: hidden;">
+      <img id="lab-bg" src="./Images/lab_outside.png">
+      <img id="prof" src="./Images/prof_dixon.PNG">
+      <button id="introS" onclick="Endintro()">Skip</button>
+      <div id="dialogg">
+        <button id="introN" onclick="next_button_I()"> >> </button>
+        <h3 id="d1">Hello there! Welcome to the wonderful world of Pokemon!</h3>
+        <h3 id="d2" style="visibility: hidden;">My name is DIXON, people call me the Pokemon Professor!</h3>
+        <h3 id="d3" style="visibility: hidden;">UMBC is inhabited by creatures called Pokemon!</h3> 
+        <h3 id="d4" style="visibility: hidden;">You must be here to become a Pokemon Trainer!</h3> 
+        <h3 id="d5" style="visibility: hidden;">With resources here at UMBC, you can acheive your goals!</h3>
+        <h3 id="d6" style="visibility: hidden;">A world of dreams and adventures awaits!</h3> 
+        <h3 id="d7" style="visibility: hidden;">...and some crushing student debt.</h3> 
+      </div>
+    </div>
+    <!--End Scene-->
+    <div class="endScene" style="visibility: hidden;">
+      <img id="lab-bg" src="./Images/poke_stage.png">
+      <img id="profEnd" src="./Images/prof_dixon.PNG">
+      <img id="p1" src="./Images/Player.png">
+      <img id="p2" src="./Images/player2.png">
+      <button id="introS" onclick="EndWinScreen()">Skip</button>
+      <div id="dialogg">
+        <button id="introN" onclick="next_button_E()"> >> </button>
+        <h3 id="s1">Congratulations!</h3>
+        <h3 id="s2" style="visibility: hidden;">You beat all the progression levels and graduated UMBC!</h3>
+        <h3 id="s3" style="visibility: hidden;">Now you're a professional Pokemon Trainer!</h3>
+        <h3 id="s4" style="visibility: hidden;">Looks like all those student loans were worth it.</h3>
+      </div>
+      <div id="credits">
+        <img id="x1" style="visibility: hidden;" src="./Images/credits_bann.png">
+        <img id="x2" style="visibility: hidden;" src="./Images/cr_kayley.png">
+        <img id="x3" style="visibility: hidden;" src="./Images/cr_deep.png">
+        <img id="x4" style="visibility: hidden;" src="./Images/cr_danielle.png">
+        <img id="x5" style="visibility: hidden;" src="./Images/cr_dominic.png">
+        <img id="x6" style="visibility: hidden;" src="./Images/cr_cole.png">
+        <img id="x7" style="visibility: hidden;" src="./Images/cr_anoushka.png">
+      </div>
+    <!--Users Stats-->
+    <div class="UserStats" style="visibility: hidden;">
+      <img id="UserStats_bg" src="./Images/title_screen.jpg">
+      <div id="userImage">
+          <img id="play1" src="./Images/Player.png">
+          <img id="play2" src="./Images/player2.png">
+      </div>
+      <div id="statistics">
+          <h1>Pokemon Caught:</h1>
+          <h1>Total Battles:</h1>
+          <h1>Battles Won:</h1>
+          <h1>Progression Battles Won:</h1>
+      </div>
+  
+      <div id="statNUMS">
+          <h1 id="PC">0</h1>
+          <h1 id="TB">0</h1>
+          <h1 id="BW">0</h1>
+          <h1 id="PB">0</h1>
+      </div>
+  
+      <button id="returnToMain" onclick="userToMain()">Back</button>
+    </div>
+  </body>
+</html>
